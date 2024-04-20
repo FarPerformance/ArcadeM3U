@@ -10,4 +10,4 @@ Example:
 Before you run the script make sure to create a backup of your roms in case you are not satisfied with the result or something unexpected happens.
 
 
-![Alt text](./1_before.jpg?raw=true "Before")
+![Alt text](./1_before.jpg?raw=true "Before")![Alt text](./2_after.jpg?raw=true "After")
