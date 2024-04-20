@@ -8,3 +8,6 @@ Example:
 ```python .\arcadem3u.py "d:\roms\neogeo" "d:\dats\neogeo.dat"```
 
 Before you run the script make sure to create a backup of your roms in case you are not satisfied with the result or something unexpected happens.
+
+
+![Alt text](https://github.com/FarPerformance/ArcadeM3U/blob/main/1_before.jpg?raw=true "Before")
