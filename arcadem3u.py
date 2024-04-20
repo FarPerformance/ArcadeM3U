@@ -42,21 +42,25 @@ if __name__ == "__main__":
     xml_tree = ET.parse(args.xml_file_path)
     xml_root = xml_tree.getroot()
 
-    # Create a dictionary to store machine names and descriptions
-    machine_descriptions = {}
+    # Create a dictionary to store machine and game names and descriptions
+    descriptions = {}
 
-    # Iterate through each "machine" element
-    for machine in xml_root.findall(".//machine"):
-        name = machine.attrib["name"]
-        description = machine.find("description").text
-        machine_descriptions[name] = description
+    # Iterate through each "machine" or "game" element
+    for element in xml_root.findall(".//machine"):
+        name = element.attrib.get("name")
+        description = element.find("description").text
+        descriptions[name] = description
+    for element in xml_root.findall(".//game"):
+        name = element.attrib.get("name")
+        description = element.find("description").text
+        descriptions[name] = description
 
     # Loop through each .zip file
     for zip_file_name in os.listdir(args.zip_folder_path):
         if zip_file_name.endswith(".zip"):
-            machine_name = os.path.splitext(zip_file_name)[0]
-            if machine_name in machine_descriptions:
-                description = machine_descriptions[machine_name]
+            base_name = os.path.splitext(zip_file_name)[0]
+            if base_name in descriptions:
+                description = descriptions[base_name]
                 create_folder_and_m3u_file_and_move_zip(description, args.zip_folder_path, zip_file_name)
             else:
-                print(f"No description found for machine '{machine_name}'.")
+                print(f"No description found for machine or game '{base_name}'.")
