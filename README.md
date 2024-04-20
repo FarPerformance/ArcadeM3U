@@ -3,5 +3,7 @@ This Python script can be used to display Arcade/Neo Geo roms with proper names 
 
 Usage:
 ```python .\arcadem3u.py <path to roms> <path to dat file>```
+Example:
+```python .\arcadem3u.py "d:\roms\neogeo" "d:\dats\neogeo.dat"```
 
 Before you run the script make sure to create a backup of your roms in case you are not satisfied with the result or something unexpected happens.
